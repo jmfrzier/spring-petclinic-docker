@@ -27,7 +27,7 @@ pipeline {
                 git branch: 'main', changelog: false, poll: false, url: 'https://github.com/jmfrzier/spring-petclinic-docker.git'
             }
         }
-        
+/*        
         stage("Compile"){
             steps{
                 sh "mvn clean compile"
@@ -63,7 +63,7 @@ pipeline {
                 sh " mvn clean install"
             }
         }
-        
+/*        
         stage("Kaniko Build & Push"){
             environment {
                 PATH = "/busybox:/kaniko:$PATH"
