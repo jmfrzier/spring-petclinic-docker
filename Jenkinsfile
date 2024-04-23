@@ -24,7 +24,7 @@ pipeline {
         
         stage("Git Checkout"){
             steps{
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/jmfrzier/Petclinic.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/jmfrzier/spring-petclinic-docker.git'
             }
         }
         
