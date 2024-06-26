@@ -25,6 +25,7 @@ spec:
         io.kompose.network/spring-petclinic-docker-default: "true"
         io.kompose.service: mysqlserver
     spec:
+      automountServiceAccountToken: false
       containers:
         - env:
             - name: MYSQL_ALLOW_EMPTY_PASSWORD
@@ -37,6 +38,15 @@ spec:
             - name: MYSQL_USER
               value: petclinic
           image: mysql:8
+          resources:
+            limits:
+              cpu: "128Mi"
+              memory: "500m"
+              ephemeral-stroage: "2Gi"
+            requests:
+              cpu: "250m"
+              memory: "64Mi"
+              ephemeral-storage: "4Gi"
           name: mysqlserver
           ports:
             - containerPort: 3306
